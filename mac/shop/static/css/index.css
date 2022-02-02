@@ -1,0 +1,120 @@
+*{
+    margin: 0%;
+    padding:0%;
+    box-sizing: border-box;
+    font-family: 'Averia Serif Libre', cursive;
+    font-weight: 700;
+}
+.wrapper{
+    position: relative;
+    margin: 0%;
+}
+.navbar{
+    position: absolute;
+}
+.centered{
+    margin-left: 490px; 
+    color: rgb(0,100,100);
+    font-size: 2.5rem;
+    font-weight:bolder;
+}
+.buffy{
+    width: 100%;
+    height: 100vh;
+    opacity: 0.75;
+    margin-top: 0%;
+   
+}
+.section1-text{
+    
+    top:60%;
+    left:3%;
+    font-size: 2.5rem;
+    position: absolute;
+    color:rgb(0,100,100);
+}
+.shop-now{
+    position: absolute;
+    top:85%;
+    left:3%;
+    font-size: 1.3rem;
+    width: 37%;
+    border-radius: 12px;
+    padding: 5px;
+    border: 2px solid yellow;
+    background-color: yellow;
+    
+}
+.shop-now a:link{
+    text-decoration:none ;
+    color:rgb(0,100,100);
+}
+.button a:link{
+    text-decoration: none;
+    color:rgb(0,100,100);
+}
+.section2{
+    position: relative;
+    background-color: rgba(57, 46, 94, 0.575);
+    height: 130vh;
+    margin: 0%;
+}
+.section2-heading{
+    margin-top: 3%;
+    position: absolute;
+    left:3%;
+    color: rgb(0,100,100);
+}
+.view-all{
+    color: rgb(0,100,100);
+    margin-top: 2%;;
+    position: absolute;
+    right:20px;
+    border-radius: 55%;
+    border: 1px solid yellow;
+    width: 10%;
+    padding: 15px;
+    background-color:transparent;
+}
+.view-all a:link{
+    text-decoration:none ;
+    color:rgb(0,100,100);
+    list-style: none;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 12px;
+    width: 100%;
+    padding-top: 110px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.grid-item{
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    font-size: 30px;
+    border-radius: 12px;
+    padding: 3.8px;
+    border: 2px solid yellow;
+    height: 30vh;
+}
+.grid-item:hover{
+    box-shadow: 8px 8px 8px black;
+    transform:scale(1.1);
+}
+.product-details{
+    padding-top: 20px;
+    position: absolute;
+    color: rgb(0,100,100);
+}
+.carousel{
+    transition: all 1s ease;
+}
+.explore-categories{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-column-gap: 12px;
+}
+.explore-categories-items{
+    margin-left: 30px;
+}

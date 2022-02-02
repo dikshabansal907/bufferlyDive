@@ -1,0 +1,92 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} {{product.product_name}}{% endblock %}
+{% block css %}
+*{
+    margin: 0%;
+    padding:0%;
+    box-sizing: border-box;
+    font-family: 'Averia Serif Libre', cursive;
+    font-weight: 700;
+}
+body{
+    background-color: rgba(57, 46, 94, 0.575);
+}
+.product-image{
+    border-radius:12px;
+    height:50vh;
+}
+.wishlist{
+    background-color:transparent;
+    color:rgba(0,100,100);
+    width:250px;
+    border:1px solid yellow;
+    margin-top:120px;
+}
+.wishlist1{
+    background-color:transparent;
+    color:rgba(0,100,100);
+    border:1px solid yellow;
+}
+{%endblock%}
+
+{% block body %}
+<div class="container my-4">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="row">
+        <img class="product-image"src="/media/{{product.image}}" width="233px" height="385px">
+    </div>
+        <div class="row">
+            <button class="btn btn-outline-warning wishlist1 my-3 mx-3">Buy Now</button>
+            <button class="btn btn-outline-warning wishlist1 my-3">Add To Cart</button>
+        </div>
+
+    </div>
+
+    <div class="col-md-8">
+        <h5 style="color:rgba(0,100,100);">{{product.product_name}}</h5>
+        <p><b>${{product.price}} </b></p>
+        <p>{{product.desc}}</p>
+        <button class="btn btn-outline-warning wishlist1  my-2 mx-1">XS</button>
+        <button class="btn btn-outline-warning wishlist1  my-2 mx-1">S</button>
+        <button class="btn btn-outline-warning wishlist1  my-2 mx-1">L</button>
+        <button class="btn btn-outline-warning wishlist1  my-2 mx-1">XL</button>
+        <br>
+        <button class="wishlist btn btn-outline-warning ">Add to Wishlist</button>
+    </div>
+    </div>
+
+
+</div>
+{% endblock %}
+{% block js %}
+<script>
+console.log('working');
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+}
+$('.cart').click(function(){
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr] + 1;
+}
+else
+{
+cart[idstr] = 1;
+}
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+});
+$('#popcart').popover();
+document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+</script>
+{% endblock %}
